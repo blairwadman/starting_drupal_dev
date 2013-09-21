@@ -41,3 +41,10 @@ function starting_drupal_dev_custom($node) {
 function starting_drupal_dev_user_login(&$edit, $account) {
   drupal_set_message(t('Hi @name, thank you for logging in and welcome!', array('@name' => $account->name)));
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function starting_drupal_dev_form_alter(&$form, &$form_state, $form_id) {
+  dpm($form_id);
+}
