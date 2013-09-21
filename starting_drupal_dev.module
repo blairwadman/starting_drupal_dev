@@ -39,5 +39,5 @@ function starting_drupal_dev_custom($node) {
  * Implements hook_user_login().
  */
 function starting_drupal_dev_user_login(&$edit, $account) {
-  drupal_set_message(t('Thank you for logging in and welcome!'));
+  drupal_set_message(t('Hi @name, thank you for logging in and welcome!', array('@name' => $account->name)));
 }
