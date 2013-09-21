@@ -10,3 +10,28 @@
 function starting_drupal_dev_init() {
   drupal_set_message('Our module is alive!');
 }
+
+/**
+ * Implements hook_menu().
+ */
+function starting_drupal_dev_menu() {
+  $items['starting_drupal_dev/custom'] = array(
+    'title' => 'Custom page',
+    'page callback' => 'starting_drupal_dev_custom',
+    'access arguments' => array('access content'),
+  );
+
+  return $items;
+}
+
+/**
+ * Custom callback function.
+ */
+function starting_drupal_dev_custom() {
+  $content['raw_markup'] = array(
+    '#type' => 'markup',
+    '#markup' => '<p>Hello world</p>',
+  );
+
+  return $content;
+}
