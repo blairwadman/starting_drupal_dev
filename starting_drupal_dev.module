@@ -1,0 +1,12 @@
+<?php
+/**
+ * @file
+ * Module file for starting drupal dev
+ */
+
+/**
+ * Implements of hook_init().
+ */
+function starting_drupal_dev_init() {
+  drupal_set_message('Our module is alive!');
+}
