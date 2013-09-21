@@ -51,7 +51,7 @@ function starting_drupal_dev_form_alter(&$form, &$form_state, $form_id) {
       '#type' => 'item',
       '#title' => t('New article'),
       '#markup' => t('You are about to create a new article'),
+      '#weight' => -6,
     );
-    dpm($form);
   }
 }
