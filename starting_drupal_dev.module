@@ -52,5 +52,6 @@ function starting_drupal_dev_form_alter(&$form, &$form_state, $form_id) {
       '#title' => t('New article'),
       '#markup' => t('You are about to create a new article'),
     );
+    dpm($form);
   }
 }
