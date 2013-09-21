@@ -33,12 +33,7 @@ function starting_drupal_dev_custom() {
   $node = node_load(1);
 
   // View of node 1
-  dpm($node);
-
-  $content['raw_markup'] = array(
-    '#type' => 'markup',
-    '#markup' => '<p>Hello world</p>',
-  );
+  $content = node_view($node);
 
   return $content;
 }
