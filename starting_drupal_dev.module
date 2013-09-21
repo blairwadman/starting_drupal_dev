@@ -46,5 +46,11 @@ function starting_drupal_dev_user_login(&$edit, $account) {
  * Implements hook_form_alter().
  */
 function starting_drupal_dev_form_alter(&$form, &$form_state, $form_id) {
-  dpm($form_id);
+  if ($form_id == 'article_node_form') {
+    $form['field_message'] = array(
+      '#type' => 'item',
+      '#title' => t('New article'),
+      '#markup' => t('You are about to create a new article'),
+    );
+  }
 }
