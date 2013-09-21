@@ -34,3 +34,10 @@ function starting_drupal_dev_custom($node) {
 
   return $content;
 }
+
+/**
+ * Implements hook_user_login().
+ */
+function starting_drupal_dev_user_login(&$edit, $account) {
+  drupal_set_message(t('Thank you for logging in and welcome!'));
+}
