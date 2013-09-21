@@ -15,9 +15,10 @@ function starting_drupal_dev_init() {
  * Implements hook_menu().
  */
 function starting_drupal_dev_menu() {
-  $items['starting_drupal_dev/custom'] = array(
+  $items['starting_drupal_dev/custom/%node'] = array(
     'title' => 'Custom page',
     'page callback' => 'starting_drupal_dev_custom',
+    'page arguments' => array(2),
     'access arguments' => array('access content'),
   );
 
@@ -27,12 +28,8 @@ function starting_drupal_dev_menu() {
 /**
  * Custom callback function.
  */
-function starting_drupal_dev_custom() {
-
-  // Load node 1
-  $node = node_load(1);
-
-  // View of node 1
+function starting_drupal_dev_custom($node) {
+  // View of node
   $content = node_view($node);
 
   return $content;
